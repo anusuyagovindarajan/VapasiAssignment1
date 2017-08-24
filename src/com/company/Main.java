@@ -6,16 +6,16 @@ public class Main {
 
     public static void main(String[] args) {
 	// write your code here
-        FruitShop cashier = new FruitShop();
+        Shop shopKeeper = new Shop();
 
-        HashMap<String,Fruit> fruitList = new HashMap<>();
+        HashMap<String,Item> itemList = new HashMap<>();
 
-        fruitList.put("Apple",  new Apple("Apple" , 100 , "red"));
-        fruitList.put("Kiwi", new Kiwi("Kiwi", 120,"brown&green"));
-        fruitList.put("Orange", new Orange("Orange", 80, "orange"));
-        fruitList.put("Banana",new Banana("Banana", 30,"yellow"));
+        itemList.put("Apple",  new Item("Apple" , "FRUIT" , 100));
+        itemList.put("Kiwi", new Item("Kiwi", "FRUIT",120));
+        itemList.put("Orange", new Item("Orange", "FRUIT", 80));
+        itemList.put("Banana",new Item("Banana", "FRUIT",30));
 
-        cashier.setFruitList(fruitList);
+        shopKeeper.setItemList(itemList);
 
         Buyer buyer = new Buyer();
 
@@ -30,7 +30,7 @@ public class Main {
 
         buyer.setPurchaseList(purchaseList);
 
-        cashier.generateReceipt(buyer.getPurchaseList());
+        shopKeeper.generateReceipt(buyer.getPurchaseList());
 
     }
 }
